@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Banner v-bind:rating="rating" v-bind:percentage="percentage" type="right" />
-    <Banner v-bind:rating="rating" v-bind:percentage="percentage" />
+    <Banner :rating="rating" :percentage="percentage" type="right" />
+    <Banner :rating="rating" :percentage="percentage" />
     <div class="form-item">
       <label for="rating">Rating</label>
       <input type="number" id="rating" name="rating" v-model="rating" min="0" max="5">
