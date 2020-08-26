@@ -1,18 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Banner v-bind:rating="rating" v-bind:percentage="percentage" />
+    <div class="form-item">
+      <label for="rating">Rating</label>
+      <input type="number" id="rating" name="rating" v-model="rating" min="0" max="5">
+    </div>
+    <div class="form-item">
+      <label for="percentage">Percentage</label>
+      <input type="number" id="percentage" name="percentage" v-model="percentage" min="0" max="100">
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Banner from './components/Banner.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    Banner
+  },
+  data: function () {
+    return {
+      rating: "4",
+      percentage: "84"
+    }
+  },
 }
 </script>
 
