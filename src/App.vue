@@ -46,7 +46,7 @@ body {
   line-height: 1.5;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 768px) {
   html,
   body {
     font-size: 18px;

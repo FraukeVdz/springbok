@@ -37,14 +37,40 @@ export default {
 
 <style scoped>
   .banner {
+    position: relative;
     margin: 50px 0;
     background: radial-gradient(circle, #07354A 0%, #031824 100%);
     color: #FFF;
     text-align: center;
   }
 
+  .banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .32;
+    background: url('../assets/background.jpg') center center / cover no-repeat;
+  }
+
+  .banner--right {
+    padding-bottom: 80px;
+    overflow: hidden;
+  }
+
+  .banner--right::after {
+    top: inherit;
+    bottom: -160px;
+    opacity: 1;
+    background: url('../assets/tyre.png') center bottom / 250px auto no-repeat;
+  }
+
   .banner__container {
+    position: relative;
     padding: 30px 22px;
+    z-index: 1;
   }
 
   .banner__text {
@@ -59,7 +85,7 @@ export default {
     margin: 0;
   }
 
-  @media only screen and (min-width: 480px) {
+  @media only screen and (min-width: 768px) {
     .banner {
       display: flex;
       justify-content: center;
@@ -69,6 +95,14 @@ export default {
     .banner--right {
       justify-content: flex-end;
       text-align: right;
+      padding: 0;
+    }
+
+    .banner--right::after {
+      top: 0;
+      bottom: inherit;
+      background-position: -120px -100px;
+      background-size: 350px auto;
     }
 
     .banner__container {
